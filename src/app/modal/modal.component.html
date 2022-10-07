@@ -1,0 +1,58 @@
+<!-- <p>
+  modal works!
+</p> -->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      อัปเดตกระดานข่าว
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()"><span style="font-size: 20px; color: blue;">ปิด</span></ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-row>
+    <ion-col style="margin-left: 5%; margin-right: 5%; margin-top: 20px;">
+      <textarea [formControl]="balanceinput" rows="6" style="width: 100%; font-size: 30px;"></textarea>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col style="text-align: center;">
+      <ion-button [disabled]="balanceinput.invalid" (click)="onDeposit()">บันทึก</ion-button>
+    </ion-col>
+  </ion-row> -->
+  <ion-row style="padding-left: 5%; padding-right: 5%; padding-top: 3%; font-size: 20px;">
+    <ion-col size="3">
+      ประกาศที่ 1
+    </ion-col>
+    <ion-col>
+      <textarea [formControl]="balanceinput" rows="2" style="width: 100%; font-size: 30px;"></textarea>
+    </ion-col>
+  </ion-row>
+  <!-- <ion-row style="padding-left: 5%; padding-right: 5%; padding-top: 3%; font-size: 20px;">
+    <ion-col size="3">
+      ประกาศที่ 2
+    </ion-col>
+    <ion-col>
+      <textarea [formControl]="balanceinput" rows="2" style="width: 100%; font-size: 30px;"></textarea>
+    </ion-col>
+  </ion-row>
+  <ion-row style="padding-left: 5%; padding-right: 5%; padding-top: 3%; font-size: 20px;">
+    <ion-col size="3">
+      ประกาศที่ 3
+    </ion-col>
+    <ion-col>
+      <textarea [formControl]="balanceinput" rows="2" style="width: 100%; font-size: 30px;"></textarea>
+    </ion-col>
+  </ion-row> -->
+  <ion-row>
+    <ion-col style="text-align: center;">
+      <!-- <ion-button [disabled]="balanceinput.invalid" (click)="onDeposit()">บันทึก</ion-button> -->
+      <ion-button (click)="onDeposit()">บันทึก</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

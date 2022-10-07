@@ -1,54 +1,221 @@
-<ion-content>
+<!-- <ion-content>
   <ion-grid>
 
-    <ion-row  style="background-color: rgb(255, 255, 255); border-radius:20px; "> 
+    <ion-row style="background-color: rgb(255, 255, 255); border-radius:20px; ">
       <ion-col>
-        <ion-img src="../assets/icon/logo_kkh.jpg" style="width:200px;height: 200px; margin-left: 40%;"></ion-img>
+        <ion-img src="../assets/icon/sk03.png" style="width: 150px; height: 200px; margin-left: 40%;"></ion-img>
       </ion-col>
       <ion-col size="6">
         <h1 style="color: rgb(55, 46, 170); font-size: 50px; text-align: center;">หมายเลขรับยา</h1>
-        <h2 style="color: rgb(0, 0, 0); font-size: 30px; text-align: center;">{{day}}&nbsp;{{days}}&nbsp;{{month}}&nbsp;เวลา&nbsp;{{ time }}</h2>
+        <h2 style="color: rgb(0, 0, 0); font-size: 30px; text-align: center;">
+          {{ day }}&nbsp;{{ days }}&nbsp;{{ month }}&nbsp;เวลา&nbsp;{{ time }}</h2>
       </ion-col>
       <ion-col>
-        <ion-img src="../assets/icon/logo_p_kkh.jpg" style="width:150px; height: 200px; "></ion-img>     
+        <ion-img src="../assets/icon/sk03.png" style="width: 150px; height: 200px; "></ion-img>
       </ion-col>
     </ion-row>
-    
-  
+
+
     <ion-row>
-  
-      <ion-col >
-        <ion-card style="color: white;  text-align: center; width: auto; height:450px;border-radius:20px;background-color:{{color1}}">
-          <h1 style="font-size: 50px;  font-family: 'Prompt', sans-serif;">ช่องที่1</h1> 
-           <h1 style="font-weight:bold; margin-top: 1%; margin-left: 10%; margin-right: 10%; border-radius: 15px; font-size:85px;color:{{fontcolor}}; background-color: {{boxcolor}};">{{ch1}}</h1>
-         
+
+      <ion-col>
+        <ion-card
+          style="color: white;  text-align: center; width: auto; height:450px; border-radius:20px; background-color:{{color1}}">
+          <h1 style="font-size: 50px;  font-family: 'Prompt', sans-serif;">ช่องที่1</h1>
+          <h1
+            style="font-weight:bold; margin-top: 1%; margin-left: 10%; margin-right: 10%; border-radius: 15px; font-size:85px;color:{{fontcolor}}; background-color: {{boxcolor}};">
+            {{ch1}}</h1>
+
         </ion-card>
       </ion-col>
       <ion-col>
-        <ion-card style="color: white;  text-align: center; width: auto; height:450px;border-radius:20px;background-color:{{color2}}">
-               <h1 style="font-size: 50px;  font-family: 'Prompt', sans-serif;">ช่องที่2</h1> 
-               <h2  style="font-weight:bold; margin-top: 1%; margin-left: 10%; margin-right: 10%; border-radius: 15px; font-size:85px;color:{{fontcolor}}; background-color: {{boxcolor}};">{{ch2}}</h2>
+        <ion-card
+          style="color: white;  text-align: center; width: auto; height:450px;border-radius:20px;background-color:{{color2}}">
+          <h1 style="font-size: 50px;  font-family: 'Prompt', sans-serif;">ช่องที่2</h1>
+          <h2
+            style="font-weight:bold; margin-top: 1%; margin-left: 10%; margin-right: 10%; border-radius: 15px; font-size:85px;color:{{fontcolor}}; background-color: {{boxcolor}};">
+            {{ch2}}</h2>
         </ion-card>
       </ion-col>
-      <ion-col >
-       <ion-card style="color: white;  text-align: center; width: auto; height:450px;border-radius:20px;background-color: {{color3}}">
-         <h1 style="font-size: 50px; font-family: 'Prompt', sans-serif;">ช่องที่3</h1>
-        <h2  style="font-weight:bold; margin-top: 1%; margin-left: 10%; margin-right: 10%; border-radius: 15px;font-size:85px;color:{{fontcolor}}; background-color: {{boxcolor}};">{{ch3}}</h2>
-       </ion-card>
+      <ion-col>
+        <ion-card
+          style="color: white;  text-align: center; width: auto; height:450px;border-radius:20px;background-color: {{color3}}">
+          <h1 style="font-size: 50px; font-family: 'Prompt', sans-serif;">ช่องที่3</h1>
+          <h2
+            style="font-weight:bold; margin-top: 1%; margin-left: 10%; margin-right: 10%; border-radius: 15px;font-size:85px;color:{{fontcolor}}; background-color: {{boxcolor}};">
+            {{ch3}}</h2>
+        </ion-card>
       </ion-col>
-      <ion-col >
-        <ion-card style="color: white; text-align: center; width: auto; height:450px; border-radius:20px;background-color:{{color4}}">
+      <ion-col>
+        <ion-card
+          style="color: white; text-align: center; width: auto; height:450px; border-radius:20px;background-color:{{color4}}">
           <h1 style="font-size: 50px; font-family: 'Prompt', sans-serif;">ช่องที่4</h1>
-         <h2  style="font-weight:bold; margin-top: 1%; margin-left: 10%; margin-right: 10%; border-radius: 15px;font-size:85px;color:{{fontcolor}}; background-color: {{boxcolor}};">{{ch4}}</h2>
+          <h2
+            style="font-weight:bold; margin-top: 1%; margin-left: 10%; margin-right: 10%; border-radius: 15px;font-size:85px;color:{{fontcolor}}; background-color: {{boxcolor}};">
+            {{ch4}}</h2>
         </ion-card>
       </ion-col>
-      <ion-col >
-        <ion-card style="color: white; text-align: center;width: auto; height:450px; border-radius:20px;background-color:{{color5}}">
+      <ion-col>
+        <ion-card
+          style="color: white; text-align: center;width: auto; height:450px; border-radius:20px;background-color:{{color5}}">
           <h1 style="font-size: 50px; font-family: 'Prompt', sans-serif;">ช่องที่5</h1>
-             <h2  style="font-weight:bold; margin-top: 1%; margin-left: 10%; margin-right: 10%; border-radius: 15px;font-size:85px;color:{{fontcolor}}; background-color: {{boxcolor}};">{{ch5}}</h2>
+          <h2
+            style="font-weight:bold; margin-top: 1%; margin-left: 10%; margin-right: 10%; border-radius: 15px;font-size:85px;color:{{fontcolor}}; background-color: {{boxcolor}};">
+            {{ch5}}</h2>
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
-  </ion-content> 
-  
+</ion-content> -->
+
+<ion-content>
+  <ion-grid>
+
+    <ion-row style="background-color: rgb(255, 255, 255); border-radius:20px; margin: 0.6%;">
+      <!-- <ion-col style="display: flex; justify-content: flex-end; margin-right: 3%;"> -->
+      <ion-col style="display: flex; justify-content: center;">
+        <!-- <ion-img src="../assets/icon/logo_kkh.jpg" style="width:200px;height: 200px; margin-left: 40%;"></ion-img> -->
+        <ion-img src="../assets/icon/sk03.png" style="width:40%;; height: 170px;"></ion-img>
+      </ion-col>
+      <ion-col size="7" style="align-self: center; text-align: center;">
+        <span style="color: rgb(55, 46, 170); font-size: 55px; text-align: center;">หมายเลขรับยา4</span>
+        <br>
+        <span style="color: rgb(0, 0, 0); font-size: 31px; text-align: center;">{{ day }} {{ days }} {{ month }} {{ year
+          }} เวลา {{ time }} น.</span>
+        <!-- <h2 style="color: rgb(0, 0, 0); font-size: 30px; text-align: center;">
+          {{day}}&nbsp;{{days}}&nbsp;{{month}}&nbsp;เวลา&nbsp;{{ time }}</h2> -->
+      </ion-col>
+      <!-- <ion-col style="display: flex; justify-content: flex-start; margin-left: 3%;"> -->
+      <ion-col style="display: flex; justify-content: center;">
+        <ion-img src="../assets/icon/sk03.png" style="width:40%; height: 170px;"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="11">
+        <ion-card class="card-hight card-white text-dark text-left text-center"
+          style="margin-right: 0; padding-right: 0; border-top-right-radius:  0px; border-bottom-right-radius:  0px; font-size: 45px;">
+          <!-- <span class="{{ checkchar }}" style="white-space: nowrap; font-size: 45px;">{{ new }}</span> -->
+          <!-- {{ checkchar }} -->
+          <div *ngIf="new?.length >= 60"><marquee width="100%" direction="left">{{ new }}</marquee></div>
+          <div *ngIf="new?.length < 60"><span>{{new}}</span></div>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card class="card-hight card-white text-dark"
+          style="margin-left: 0; padding-left: 0; border-top-left-radius:  0px; border-bottom-left-radius:  0px;">
+          <button class="btn btn-primary" style="margin-top: 12px; border-radius: 100%;"
+            (click)="openModal()">=</button>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="cw">
+        <ion-card class="card-left card-blue">
+          <h1 class="H1ch">ช่องที่7</h1>
+          <h2 class="H2ch"
+            style="font-weight:bold; margin-top: 1%; margin-left: 10%; margin-right: 10%; border-radius: 15px; color: {{fontcolor}}; background-color: {{boxcolor}};"
+            [innerHTML]="ch5">
+            <!-- {{ch5}}<br>{{to}}<br>{{ch5n}} -->
+          </h2>
+        </ion-card>
+        <!-- <ion-card
+          style="color: white; text-align: center;width: auto; border-radius: 20px 20px 0px 0px; background-color: rgba(255, 0, 0, 0.466); margin-bottom: 1%;">
+          <h1 style="font-size: 50px;">ช่องที่5</h1>
+        </ion-card>
+        <ion-card
+          style="color: white; text-align: center; width: auto; height: 300px; border-radius: 0px 0px 20px 20px; background-color: rgba(0, 255, 64, 0.541); margin-top: 0;">
+          <h2
+            style="font-weight:bold; margin-top: 1%; margin-left: 10%; margin-right: 10%; border-radius: 15px;font-size:85px;color:{{fontcolor}}; background-color: {{boxcolor}};">
+            {{ch5}}</h2>
+        </ion-card> -->
+      </ion-col>
+      <ion-col class="cw">
+        <ion-card class="card-center card-blue">
+          <h1 class="H1ch">ช่องที่6</h1>
+          <h2 class="H2ch"
+            style="font-weight:bold; margin-top: 1%; margin-left: 10%; margin-right: 10%; border-radius: 15px;color:{{fontcolor}}; background-color: {{boxcolor}};"
+            [innerHTML]="ch4">
+            <!-- {{ch4}}<br>{{to}}<br>{{ch4n}} -->
+          </h2>
+        </ion-card>
+        <!-- <ion-card
+          style="color: white; text-align: center; width: auto; height: 450px; border-radius:20px; background-color: rgb(1, 45, 83); box-shadow: 0px 5px 10px 10px #888888;">
+          <h1 style="font-size: 50px;">ช่องที่4</h1>
+          <h2
+            style="font-weight:bold; margin-top: 1%; margin-left: 10%; margin-right: 10%; border-radius: 15px;font-size:85px;color:{{fontcolor}}; background-color: {{boxcolor}};">
+            {{ch4}}</h2>
+        </ion-card> -->
+      </ion-col>
+      <ion-col class="cw">
+        <ion-card class="card-center card-green">
+          <h1 class="H1ch">ช่องที่5</h1>
+          <h2 class="H2ch"
+            style="font-weight:bold; margin-top: 1%; margin-left: 10%; margin-right: 10%; border-radius: 15px;color:{{fontcolor}}; background-color: {{boxcolor}};"
+            [innerHTML]="ch3">
+            <!-- {{ch3}}<br>{{to}}<br>{{ch3n}} -->
+          </h2>
+        </ion-card>
+        <!-- <ion-card
+          style="color: white;  text-align: center; width: auto;border-radius:20px; background-color: #00c4fac9;">
+          <h1 style="font-size: 50px;">ช่องที่3</h1>
+        </ion-card>
+        <ion-card
+          style="color: white;  text-align: center; width: auto; height:300px;border-radius:20px; background-color: #d000faa2;">
+          <h2
+            style="font-weight:bold; margin-top: 1%; margin-left: 10%; margin-right: 10%; border-radius: 15px;font-size:85px;color:{{fontcolor}}; background-color: {{boxcolor}};">
+            {{ch3}}</h2>
+        </ion-card> -->
+      </ion-col>
+      <ion-col class="cw">
+        <ion-card class="card-center card-green">
+          <h1 class="H1ch">ช่องที่4</h1>
+          <h2 class="H2ch"
+            style="font-weight:bold; margin-top: 1%; margin-left: 10%; margin-right: 10%; border-radius: 15px;color:{{fontcolor}}; background-color: {{boxcolor}};"
+            [innerHTML]="ch2">
+            <!-- {{ch2}}<br>{{to}}<br>{{ch2n}} -->
+          </h2>
+        </ion-card>
+      </ion-col>
+      <ion-col class="cw">
+        <ion-card class="card-center card-green">
+          <h1 class="H1ch">ช่องที่3</h1>
+          <h2 class="H2ch"
+            style="font-weight:bold; margin-top: 1%; margin-left: 10%; margin-right: 10%; border-radius: 15px;color:{{fontcolor}}; background-color: {{boxcolor}};"
+            [innerHTML]="ch1">
+            <!-- {{ch1}}<br>{{to}}<br>{{ch1n}} -->
+          </h2>
+        </ion-card>
+        <!-- <ion-card
+          style="color: white;  text-align: center; width: auto; border-radius:20px; background-color: rgba(50, 72, 92, 0.541);">
+          <h1 style="font-size: 50px;">ช่องที่1</h1>
+        </ion-card>
+        <ion-card
+          style="color: white;  text-align: center; width: auto; height:300px; border-radius:20px; background-color: rgba(70, 112, 148, 0.541);">
+          <h1
+            style="font-weight:bold; margin-top: 1%; margin-left: 10%; margin-right: 10%; border-radius: 15px; font-size:85px;color:{{fontcolor}}; background-color: {{boxcolor}};">
+            {{ch1}}</h1>
+        </ion-card> -->
+      </ion-col>
+      <ion-col class="cw">
+        <ion-card class="card-right card-yellow">
+          <h1 class="H1ch">ช่องที่2</h1>
+          <h2 class="H2ch"
+            style="font-weight:bold; margin-top: 1%; margin-left: 10%; margin-right: 10%; border-radius: 15px;color:{{fontcolor}}; background-color: {{boxcolor}};"
+            [innerHTML]="ch0">
+            <!-- {{ch0}}<br>{{to}}<br>{{ch0n}} -->
+          </h2>
+        </ion-card>
+        <!-- <ion-card
+          style="color: white;  text-align: center; width: auto; border-radius:20px; background-color: rgba(50, 72, 92, 0.541);">
+          <h1 style="font-size: 50px;">ช่องที่1</h1>
+        </ion-card>
+        <ion-card
+          style="color: white;  text-align: center; width: auto; height:300px; border-radius:20px; background-color: rgba(70, 112, 148, 0.541);">
+          <h1
+            style="font-weight:bold; margin-top: 1%; margin-left: 10%; margin-right: 10%; border-radius: 15px; font-size:85px;color:{{fontcolor}}; background-color: {{boxcolor}};">
+            {{ch1}}</h1>
+        </ion-card> -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

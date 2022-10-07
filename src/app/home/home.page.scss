@@ -1,7 +1,108 @@
-ion-content{
-  --ion-background-color:#000000; 
-  font-family: 'Prompt', sans-serif;
+// @font-face {
+//   // font-family: 'myFirstFont';
+//   // src: url(../../assets/font/Pridi/Pridi-Regular.ttf);
+//   font-family: 'myFirstFont';
+//   src: url(../../assets/font/Prompt-Regular.ttf);
+// }
+
+// ion-content{
+//   --ion-background-color:#000000; 
+//   font-family: 'Prompt', sans-serif;
+// }
+
+@font-face {
+  // font-family: 'myFirstFont';
+  // src: url(../../assets/font/Pridi/Pridi-Regular.ttf);
+  font-family: 'myFirstFont';
+  src: url(../../assets/font/Prompt-Regular.ttf);
 }
+
+ion-content , h1 , h2 {
+  font-family: 'myFirstFont';
+  font-weight: bold;
+}
+
+ion-content {
+  --ion-background-color:#000000;
+  // font-family: 'Prompt', sans-serif;
+}
+
+ion-col {
+  padding: 0;
+}
+
+ion-card {
+  color: white;  
+  text-align: center; 
+  width: auto; 
+  height: 400px;
+  // height: 450px;
+  border-radius: 20px; 
+  // background-color: rgba(42, 78, 110, 0.541);
+  // background-color: rgba(0, 0, 255, 0.322);
+}
+
+.card-white {
+  background-color: rgb(255, 255, 255) !important
+}
+
+.card-hight {
+  height: 65px !important;
+}
+
+.card-blue {
+  background-color: rgba(0, 0, 255, 0.322) !important
+}
+
+.card-yellow {
+  background-color: rgb(192, 78, 78) !important
+}
+
+.card-green {
+  background-color: rgba(91, 149, 37, 0.692) !important
+}
+
+.cw {
+  width: 20px;
+}
+
+.animate-r-l {
+  animation: mymove 40s infinite;
+}
+
+@keyframes mymove {
+  from {margin-left: 100%;}
+  to {margin-left: -150%;}
+}
+
+.H1ch {
+  margin-top: 25px;
+  margin-bottom: 0%;
+  // font-size: 55px;
+  font-size: 60px;
+  color: #ffc107 !important;
+}
+
+.H2ch {
+  padding-top: 0;
+  // font-size: 53px;
+  font-size: 60px;
+  line-height: 90px;
+}
+
+.card-left {
+  margin-right: 5px;
+}
+
+.card-center {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.card-right {
+  margin-left: 5px;
+}
+
 #container {
   text-align: center;
   position: absolute;
