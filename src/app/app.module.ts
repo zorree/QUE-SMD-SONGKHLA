@@ -13,32 +13,38 @@ import { Media } from '@ionic-native/media/ngx';
 import { HttpClientModule } from '@angular/common/http';
 import { NativeAudio } from '@ionic-native/native-audio/ngx';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+
 // const config: SocketIoConfig = { url: 'http://192.168.42.132:3040', options: {} };
 // const config: SocketIoConfig = { url: 'http://192.168.15.245:3040', options: {} };
 // const config: SocketIoConfig = { url: 'http://192.168.4.245:3040', options: {} };
 // const config: SocketIoConfig = { url: 'http://192.168.43.224:3040', options: {} };
 // const config: SocketIoConfig = { url: 'http://192.168.43.224:3040', options: {} };
 // const config: SocketIoConfig = { url: 'http://192.168.43.235:3040', options: {} };
-const config: SocketIoConfig = { url: 'http://192.168.208.226:3040', options: {} };
+// const config: SocketIoConfig = { url: 'http://192.168.185.226:3040', options: {} };
+// const config: SocketIoConfig = { url: 'http://192.168.2.2:3040', options: {} };
+// const config: SocketIoConfig = { url: 'http://192.168.227.226:3040', options: {} };
+const config: SocketIoConfig = { url: 'http://192.168.227.116:3040', options: {} };
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule,
-  HttpClientModule, 
- IonicModule.forRoot(),
-     SocketIoModule.forRoot(config),
-      AppRoutingModule,
-      NgbModule
-       ],
+    HttpClientModule,
+    IonicModule.forRoot(),
+    SocketIoModule.forRoot(config),
+    AppRoutingModule,
+    NgbModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,
-     Media,
-    { provide: RouteReuseStrategy, 
+    Media,
+    {
+      provide: RouteReuseStrategy,
       useClass: IonicRouteStrategy
-     },NativeAudio
+    }, NativeAudio
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {}

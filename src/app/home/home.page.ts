@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
-import { Socket } from 'ngx-socket-io';
+import { Socket,SocketIoConfig } from 'ngx-socket-io';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Platform, ModalController } from '@ionic/angular';
@@ -8,7 +8,6 @@ import { NativeAudio } from '@ionic-native/native-audio/ngx';
 import { async } from '@angular/core/testing';
 import { ModalComponent } from '../modal/modal.component';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -16,6 +15,7 @@ import { ModalComponent } from '../modal/modal.component';
 })
 
 export class HomePage implements OnInit, OnDestroy, AfterViewInit {
+  ee:any = 2000
   day: any;
   days: any;
   month: any;
@@ -40,7 +40,7 @@ export class HomePage implements OnInit, OnDestroy, AfterViewInit {
 
   checkme: any;
 
-  new: any;
+  new: any = 'โรงพยาบาลสงขลายินดีต้อนรับ';
   checkchar: any;
 
   number_call: any;
@@ -75,6 +75,12 @@ export class HomePage implements OnInit, OnDestroy, AfterViewInit {
 
   }
 
+  isModalOpen = false;
+
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+  }
+
   ionViewWillEnter() {
 
     this.nativeAudio.preloadSimple('getnumber', 'assets/getnumber.mp3');
@@ -107,7 +113,6 @@ export class HomePage implements OnInit, OnDestroy, AfterViewInit {
 
   ngOnInit() {
 
-
     // setInterval(() => {
     //   this.ch1
     //   this.ch2
@@ -119,6 +124,10 @@ export class HomePage implements OnInit, OnDestroy, AfterViewInit {
     // console.log("วัน" + this.thday[this.time.getDay()] + "ที่ " + this.time.getDate() + " " + this.thmonth[this.time.getMonth()] + " " + (this.time.getFullYear() + 543) + " เวลา " + this.time.toLocaleTimeString('it-IT'))
     // }, 1000);
 
+    this.socket.fromEvent('news').subscribe(message => {
+      //console.log(message)
+      this.new = message;
+    })
 
     this.socket.fromEvent('day').subscribe(message => {
       //console.log(message)
@@ -162,7 +171,7 @@ export class HomePage implements OnInit, OnDestroy, AfterViewInit {
           } else {
             console.log('OK-----')
           }
-        }, 4000)
+        }, 3000)
       }
 
       if (this.i == 1 && this.json_que_call[0].order_number.length != 0 && this.json_que_call[0].station_id.length != 0 && this.json_que_call[0].order_number.includes("-")) {
@@ -175,93 +184,38 @@ export class HomePage implements OnInit, OnDestroy, AfterViewInit {
 
         console.log(convert)
 
+        if(this.json_que_call[0].station_id == 2) {
+          this.ch0 = convert[0] + '<br>ถึง<br>' + convert[1];
+        }
+
+        if(this.json_que_call[0].station_id == 3) {
+          this.ch1 = convert[0] + '<br>ถึง<br>' + convert[1];
+        }
+
+        if(this.json_que_call[0].station_id == 4) {
+          this.ch2 = convert[0] + '<br>ถึง<br>' + convert[1];
+        }
+
+        if(this.json_que_call[0].station_id == 5) {
+          this.ch3 = convert[0] + '<br>ถึง<br>' + convert[1];
+        }
+
+        if(this.json_que_call[0].station_id == 6) {
+          this.ch4 = convert[0] + '<br>ถึง<br>' + convert[1];
+        }
+
+        if(this.json_que_call[0].station_id == 7) {
+          this.ch5 = convert[0] + '<br>ถึง<br>' + convert[1];
+        }
+
+        
+
         let nf = convert[0];
         let nl = convert[1];
 
         console.log(nf)
         console.log(nl)
         let c = []
-
-        // let c0, c1, c2, c3, c4, c5
-        // for (j = 0; j < 6; j++) {
-
-        //   if (j == 0) {
-        //     c[0] = 0
-        //     console.log(c[0])
-        //   }
-        //   if (j == 1) {
-        //     c[1] = 2500
-        //     console.log(c[1])
-        //   }
-        //   if (j == 2) {
-        //     c[2] = 2500 + (625 * nf.length)
-        //     console.log(c[2])
-        //   }
-        //   if (j == 3) {
-        //     c[3] = 2500 + (625 * nf.length) + 2500
-        //     console.log(c[3])
-        //   }
-        //   if (j == 4) {
-        //     c[4] = 2500 + (625 * nf.length) + 2500 + (625 * nl.length)
-        //     console.log(c[4])
-        //   }
-        //   if (j == 5) {
-        //     c[5] = 2500 + (625 * nf.length) + 2500 + (625 * nl.length) + 2500
-        //     console.log(c[5])
-        //   }
-        //   setTimeout(() => {
-        //     if (this.i == 1) {
-        //       setTimeout(() => {
-        //         this.nativeAudio.play('getnumber');
-        //         console.log('getnumber');
-        //         this.i = 2;
-        //       }, 1000)
-        //     } else if (this.i == 2) {
-        //       for (x = 0; nf.length > x; x++) {
-        //         let c = nf.charAt(x);
-        //         setTimeout(() => {
-        //           this.nativeAudio.play(c);
-        //           console.log(c);
-        //         }, 1000 * x)
-        //       }
-        //       this.i = 3;
-        //     } else if (this.i == 3) {
-        //       setTimeout(() => {
-        //         this.nativeAudio.play('to');
-        //         console.log('to');
-        //         this.i = 4;
-        //       }, 1500)
-        //     } else if (this.i == 4) {
-        //       for (x = 0; nl.length > x; x++) {
-        //         let c = nl.charAt(x);
-        //         setTimeout(() => {
-        //           this.nativeAudio.play(c);
-        //           console.log(c);
-        //         }, 1000 * x)
-        //       }
-        //       this.i = 5;
-
-        //     } else if (this.i == 5) {
-        //       setTimeout(() => {
-        //         this.nativeAudio.play('getdrug');
-        //         console.log('getdrug');
-        //         this.i = 6;
-        //       }, 1700)
-
-        //     } else if (this.i == 6) {
-
-        //       setTimeout(() => {
-        //         console.log('-');
-        //       }, 1000)
-
-        //       setTimeout(() => {
-        //         this.nativeAudio.play(s);
-        //         console.log(s);
-        //         this.i = 1;
-        //       }, 1500)
-        //     }
-        //   }, c[j])
-        // }
 
         for (j = 0; j < 6; j++) {
 
@@ -338,92 +292,86 @@ export class HomePage implements OnInit, OnDestroy, AfterViewInit {
               setTimeout(() => {
                 this.nativeAudio.play(s);
                 console.log(s);
-                // this.i = 1;
               }, 0)
 
               setTimeout(() => {
                 console.log('to i = 1');
                 this.i = 1;
               }, 1000)
+
+              this.socket.emit('after_call', [this.json_que_call[0].orderindex, this.json_que_call[0].station_id]);
+              console.log('Sent Socket TO after_call')
             }
           }, c[j])
         }
 
-        this.socket.emit('after_call', [this.json_que_call[0].orderindex,this.json_que_call[0].station_id]);
-        this.socket.emit('after_call1', 55555);
+        // setTimeout(() => {
+        //   this.socket.emit('after_call', [this.json_que_call[0].orderindex, this.json_que_call[0].station_id]);
+        //   console.log('Sent Socket TO after_call')
+        // }, c[5])
+
       }
     })
 
     this.socket.fromEvent('que_ch0').subscribe(message => {
-      // console.log(message[0].order_number)
       if (message[0].order_number.length != 0) {
         let convert = message[0].order_number.split("-", 2)
         this.ch0 = convert[0] + '<br>ถึง<br>' + convert[1];
+        console.log('que_ch0 OK')
       } else {
         this.ch0 = ''
+        console.log('que_ch0 blank')
       }
-      // this.ch0 = convert[0];
-      // this.ch0n = convert[1];
     })
     this.socket.fromEvent('que_ch1').subscribe(message => {
-      // console.log(message[0].order_number)
       if (message[0].order_number.length != 0) {
         let convert = message[0].order_number.split("-", 2)
         this.ch1 = convert[0] + '<br>ถึง<br>' + convert[1];
+        console.log('que_ch1 ok')
       } else {
         this.ch1 = ''
+        console.log('que_ch1 blank')
       }
-
-      // this.ch1 = convert[0];
-      // this.ch1n = convert[1];
     })
     this.socket.fromEvent('que_ch2').subscribe(message => {
-      //console.log(message[0].order_number)
       if (message[0].order_number.length != 0) {
         let convert = message[0].order_number.split("-", 2)
-        // this.ch2 = message[0].order_number;
         this.ch2 = convert[0] + '<br>ถึง<br>' + convert[1];
+        console.log('que_ch2 ok')
       } else {
         this.ch2 = ''
+        console.log('que_ch2 blank')
       }
-      // this.ch2 = convert[0];
-      // this.ch2n = convert[1];
     })
     this.socket.fromEvent('que_ch3').subscribe(message => {
-      // console.log(message[0].order_number)
       if (message[0].order_number.length != 0) {
         let convert = message[0].order_number.split("-", 2)
-        // this.ch3 = message[0].order_number;
         this.ch3 = convert[0] + '<br>ถึง<br>' + convert[1];
+        console.log('que_ch3 ok')
       } else {
         this.ch3 = ''
+        console.log('que_ch3 blank')
       }
-      // this.ch3 = convert[0];
-      // this.ch3n = convert[1];
     })
     this.socket.fromEvent('que_ch4').subscribe(message => {
-      // console.log(message[0].order_number)
       if (message[0].order_number.length != 0) {
         let convert = message[0].order_number.split("-", 2)
-        // this.ch4 = message[0].order_number;
         this.ch4 = convert[0] + '<br>ถึง<br>' + convert[1];
+        console.log('que_ch4 ok')
       } else {
         this.ch4 = ''
+        console.log('que_ch4 blank')
       }
-      // this.ch4 = convert[0];
-      // this.ch4n = convert[1];
     })
     this.socket.fromEvent('que_ch5').subscribe(message => {
-      // console.log(message[0].order_number)
       if (message[0].order_number.length != 0) {
         let convert = message[0].order_number.split("-", 2)
-        // this.ch5 = message[0].order_number;
         this.ch5 = convert[0] + '<br>ถึง<br>' + convert[1];
+        console.log('que_ch5 ok')
       } else {
         this.ch5 = ''
+        console.log('que_ch5 blank')
       }
-      // this.ch5 = convert[0];
-      // this.ch5n = convert[1];
     })
   }
 
